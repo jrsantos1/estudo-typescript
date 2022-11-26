@@ -1,29 +1,22 @@
 export class Negociacao{
-    #data;
-    #quantidade;
-    #valor;
 
-    constructor(data, quantiddade, valor){
-        this.#data = data;
-        this.#quantidade = this.#quantidade;
-        this.#valor = valor;
-    }
+    constructor(private _data: Date, private _quantidade: number, private _valor: number){}
 
     get data(){
-        return this.#data;
+        return this._data;
     }
 
     get quantiddade(){
         console.log("teste");
-        return this.#quantidade;
+        return this._quantidade;
         
     }
 
     get valor(){
-        return this.#valor;
+        return this._valor;
     }
 
     get volume (){
-        return this.#quantidade * this.#valor;
+        return this._quantidade * this._valor;
     }
 }

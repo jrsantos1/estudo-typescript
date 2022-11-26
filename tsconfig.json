@@ -3,7 +3,8 @@
         "moduleResolution": "node",
         "outDir": "dist/js",
         "target": "ES6",
-        "noEmitOnError": true // Não gera arquivo app.js enquanto o código conter errors
+        "noEmitOnError": true, // Não gera arquivo app.js enquanto o código conter errors
+        "noImplicitAny": true
     },
     "include": ["app/**/*"]
 }
