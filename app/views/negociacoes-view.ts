@@ -1,3 +1,4 @@
+import { Negociacoes } from './../models/negociacoes.js';
 export class NegociacoesView {
 
     private elemento: HTMLElement;
@@ -8,9 +9,10 @@ export class NegociacoesView {
         
     }
 
-    template(): string{
+    template(negociacoes: Negociacoes): string{
 
-        console.log('template');
+        negociacoes.lista().forEach(x => console.log('dsd'));
+        console.log('dsdsa');
         
 
         return `
@@ -23,15 +25,25 @@ export class NegociacoesView {
                 </tr>
             </thead>
             <tbody>
+            ${negociacoes.lista().map(x => {      
+                return `
+                <tr>
+                    <td>$</td>
+                    <td>${x.quantiddade}</td>
+                    <td>${x.valor}</td>
+                </tr>`
+             
+            }).join('')}
             </tbody>
            </table>
                 `
     }
 
-    update(): void{
+    update(negociacoes: Negociacoes): void{
         console.log('update');
         
-        this.elemento.innerHTML = this.template();
+        this.elemento.innerHTML = this.template(negociacoes);
+
     }
 
 }

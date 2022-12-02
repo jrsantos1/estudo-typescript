@@ -11,5 +11,5 @@ form.addEventListener('submit', e => {
 })
 
 const negociacoesView = new NegociacoesView('teste');
-const template = negociacoesView.template();
-console.log(template);
+//const template = negociacoesView.template();
+//console.log(template);

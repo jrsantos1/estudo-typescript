@@ -3,8 +3,9 @@ export class NegociacoesView {
         this.elemento = document.querySelector(seletor);
         console.log(this.elemento);
     }
-    template() {
-        console.log('template');
+    template(negociacoes) {
+        negociacoes.lista().forEach(x => console.log('dsd'));
+        console.log('dsdsa');
         return `
            <table class="table table-striped table-hover table-bordered">
             <thead>
@@ -15,12 +16,20 @@ export class NegociacoesView {
                 </tr>
             </thead>
             <tbody>
+            ${negociacoes.lista().map(x => {
+            return `
+                <tr>
+                    <td>$</td>
+                    <td>${x.quantiddade}</td>
+                    <td>${x.valor}</td>
+                </tr>`;
+        }).join('')}
             </tbody>
            </table>
                 `;
     }
-    update() {
+    update(negociacoes) {
         console.log('update');
-        this.elemento.innerHTML = this.template();
+        this.elemento.innerHTML = this.template(negociacoes);
     }
 }
